@@ -14,6 +14,8 @@ func main() {
 		redShow(err.Error())
 	} else {
 		err = cmd.Wait()
-		fmt.Println("--ok", err.Error())
+		if err != nil {
+			fmt.Println("--ok", err.Error())
+		}
 	}
 }
