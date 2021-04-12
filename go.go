@@ -8,7 +8,7 @@ func redShow(err string) {
 }
 
 func main() {
-	cmd := exec.Command("ssh-keygen", "-lf", "/tmp/497845385/id_rsa.pub")
+	cmd := exec.Command("sssh-keygen", "-lf", "/tmp/497845385/id_rsa.pub")
 	// cmd := exec.Command("ls", "-l", "/tmp/afasdfa")
 	if err := cmd.Start(); err != nil {
 		redShow(err.Error())
