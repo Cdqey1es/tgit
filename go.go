@@ -2,12 +2,13 @@ package main
 
 import "os/exec"
 import "fmt"
+import "time"
 
 func redShow(err string) {
 	fmt.Printf("%c[1;40;31m%s%c[0m\n", 0x1B, err, 0x1B)
 }
 
-func main() {
+func tssh() {
 	cmd := exec.Command("ssh-keygen", "-lf", "/tmp/497845385/id_rsa.pub")
 	// cmd := exec.Command("ls", "-l", "/tmp/afasdfa")
 	if err := cmd.Start(); err != nil {
@@ -17,5 +18,11 @@ func main() {
 		if err != nil {
 			fmt.Println("--ok", err.Error())
 		}
+	}
+}
+func main() {
+	for idx := 0; idx != 10000; idx++ {
+		time.Sleep(time.Second * 1)
+		tssh()
 	}
 }
