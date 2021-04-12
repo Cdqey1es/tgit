@@ -1,0 +1,16 @@
+[Unit]
+Description=tgit
+After=syslog.target
+After=network.target
+
+[Service]
+Type=simple
+User=git
+Group=git
+WorkingDirectory=/home/git/tgit
+ExecStart=/home/git/tgit/wsy_test.out web
+Restart=always
+Environment=USER=git HOME=/home/git
+
+[Install]
+WantedBy=multi-user.target
